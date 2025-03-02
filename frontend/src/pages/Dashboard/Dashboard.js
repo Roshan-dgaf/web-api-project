@@ -9,42 +9,67 @@ const Dashboard = () => {
   return (
     <>
       <Container>
-        <h1 className="text-center mt-5">
-          Welcome to Recipe app
+        <h1 className="text-center mt-5 premium-heading">
+          Welcome to the Recipe App
         </h1>
 
-        <section className="mx-auto">
-          {/* search section */}
-
+        <section className="mx-auto mt-4">
+          {/* Search Section */}
           <div className="d-flex justify-content-end">
-            <Form className='mx-auto' style={{ maxWidth: "340px", width: "100%" }}>
+            <Form className="mx-auto" style={{ maxWidth: "380px", width: "100%" }}>
               <Form.Group className="mb-3" style={{ position: "relative" }} controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="Search Recipe" />
-                <div style={{ position: "absolute", right: "6px", top: "8px", cursor: "pointer" }}>
+                <Form.Control
+                  type="text"
+                  placeholder="Search Recipe..."
+                  className="search-input"
+                />
+                <div className="clear-search-icon">
                   <i className="fa-solid fa-xmark"></i>
                 </div>
               </Form.Group>
             </Form>
           </div>
 
-          {/* receipe section */}
-
-          <div className="recipecard d-flex justify-content-between flex-wrap align-items-center">
-            <Card style={{ maxWidth: '21rem', width: "100%", marginBottom: "15px", boxShadow: "0px 2px 20px #cfd8dc", height: "27rem", cursor: "pointer" }}>
-              <Card.Img style={{ width: "100%", height: "13rem" }} variant="top" src="/logo192.png" />
+          {/* Recipe Section */}
+          <div className="recipe-cards d-flex justify-content-between flex-wrap align-items-center">
+            <Card className="recipe-card">
+              <Card.Img variant="top" src="/logo192.png" className="card-img" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title.
+                <Card.Title className="premium-card-title">Delicious Recipe</Card.Title>
+                <Card.Text className="premium-card-text">
+                  A quick and easy recipe to satisfy your cravings. Perfect for any occasion.
                 </Card.Text>
-                <Button variant="danger">Go somewhere</Button>
+                <Button variant="primary" className="premium-button">View Recipe</Button>
+              </Card.Body>
+            </Card>
+
+            {/* You can repeat the above Card component as needed */}
+            <Card className="recipe-card">
+              <Card.Img variant="top" src="/logo192.png" className="card-img" />
+              <Card.Body>
+                <Card.Title className="premium-card-title">Healthy Dish</Card.Title>
+                <Card.Text className="premium-card-text">
+                  A healthy and nutritious recipe for all the health-conscious individuals.
+                </Card.Text>
+                <Button variant="primary" className="premium-button">View Recipe</Button>
+              </Card.Body>
+            </Card>
+
+            <Card className="recipe-card">
+              <Card.Img variant="top" src="/logo192.png" className="card-img" />
+              <Card.Body>
+                <Card.Title className="premium-card-title">Healthy Dish</Card.Title>
+                <Card.Text className="premium-card-text">
+                  A healthy and nutritious recipe for all the health-conscious individuals.
+                </Card.Text>
+                <Button variant="primary" className="premium-button">View Recipe</Button>
               </Card.Body>
             </Card>
           </div>
         </section>
       </Container>
     </>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
