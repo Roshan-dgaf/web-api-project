@@ -1,19 +1,85 @@
 header {
-    width: 100%;
-    height: 65px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    .navbar {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-    .dropdown_btn {
-        background: none !important;
-        border: none !important;
-        color: none;
-        font-size: 20px;
+    .brand-name {
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 600;
+        color: #fff;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #f1c40f; // Add a gold hover effect
+        }
     }
-    
-    .dropdown-toggle::after {
-        display: none;
+
+    .navbar-logo {
+        width: 150px;
+        height: 90px;
+        margin-right: 10px;
     }
-    
+
+    .brand-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-right: 100px;
+
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #f1c40f; // Hover color effect
+        }
+    }
+
+    .dropdown-btn {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .dropdown-img-container {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .dropdown-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .dropdown-menu {
+        background-color: #343a40;
+        border: none;
+        padding: 5px 10px;
+    }
+
+    .dropdown-item {
+        color: #fff;
+        font-weight: 500;
+
+        &:hover {
+            background-color: #f39c12; // Add a hover effect to the dropdown item
+            color: #fff;
+        }
+    }
 }

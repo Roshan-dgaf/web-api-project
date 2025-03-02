@@ -4,39 +4,50 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
-import "./header.scss";
+import './header.scss';
 
 const Header = () => {
     return (
         <>
             <header>
-                <Navbar bg="dark" data-bs-theme="dark" style={{ width: "100%" }}>
+                <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
                     <Container>
-                        <NavLink to='/' className="text-decoration-none text-light mx-2" style={{ fontSize: "24px" }}>Recipe App</NavLink>
+                        {/* Logo and brand name */}
+                        <NavLink to="/" className="text-decoration-none text-light mx-2 brand-name">
+                            <img src="/logo1.png" alt="Logo" className="navbar-logo" />
+                            <span className="brand-title">Recipe App</span>
+                        </NavLink>
+
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#home">Create Recipe</Nav.Link>
+                            {/* Navigation links */}
+                            <Nav.Link as={NavLink} to="/" className="text-light mx-2 nav-link">
+                                Home
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to="/create-recipe" className="text-light mx-2 nav-link">
+                                Create Recipe
+                            </Nav.Link>
                         </Nav>
-                        <Nav className='text-end'>
+
+                        <Nav className="text-end">
                             <Dropdown>
-                                <Dropdown.Toggle variant="success" className='dropdown_btn' id="dropdown-basic">
-                                    <div style={{ width: "45px", height: "45px", cursor: "pointer" }}>
-                                        <img src="/logo192.png" style={{ width: "100%", height: "100%" }} alt="" />
+                                <Dropdown.Toggle variant="success" className="dropdown-btn" id="dropdown-basic">
+                                    <div className="dropdown-img-container">
+                                        <img src="/logo192.png" alt="User" className="dropdown-img" />
                                     </div>
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu>
-                                    <NavLink to='/login' className="text-decoration-none text-light mx-2">Login</NavLink>
-
+                                <Dropdown.Menu className="dropdown-menu">
+                                    <Dropdown.Item as={NavLink} to="/login" className="text-decoration-none text-dark">
+                                        Login
+                                    </Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-
                         </Nav>
                     </Container>
                 </Navbar>
             </header>
         </>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
