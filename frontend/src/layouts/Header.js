@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "./header.scss"
-import Dropdown from 'react-bootstrap/Dropdown';
 import { NavLink } from 'react-router-dom';
+import "./header.scss";
 
 const Header = () => {
     return (
@@ -20,8 +20,8 @@ const Header = () => {
                         <Nav className='text-end'>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" className='dropdown_btn' id="dropdown-basic">
-                                    <div style={{width:"45px",height:"45px",cursor:"pointer"}}>
-                                        <img src="/logo192.png" style={{width:"100%",height:"100%"}} alt="" />
+                                    <div style={{ width: "45px", height: "45px", cursor: "pointer" }}>
+                                        <img src="/logo192.png" style={{ width: "100%", height: "100%" }} alt="" />
                                     </div>
                                 </Dropdown.Toggle>
 
