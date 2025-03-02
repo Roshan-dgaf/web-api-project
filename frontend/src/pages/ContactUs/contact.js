@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import './ContactUs.scss'; // Import the custom CSS for styling
 
 const ContactUs = () => {
     return (
@@ -10,9 +11,9 @@ const ContactUs = () => {
                 {/* Left Column: Contact Details */}
                 <Col md={5} className="mb-4 mb-md-0">
                     <h1 className="text-center mb-4">Contact Us</h1>
-                    <p className="text-center">We would love to hear from you! Reach out to us via the form on the right or using the contact details below.</p>
+                    <p className="text-left mb-4">We would love to hear from you! Reach out to us via the form on the right or using the contact details below.</p>
 
-                    <div className="contact-details">
+                    <div className="contact-details p-4 border rounded shadow-sm">
                         <h5>Email</h5>
                         <p>info@recipeapp.com</p>
 
@@ -27,7 +28,7 @@ const ContactUs = () => {
                 {/* Right Column: Contact Form */}
                 <Col md={5}>
                     <h3 className="text-center mb-4">Send Us a Message</h3>
-                    <Form>
+                    <Form className="contact-form p-4 border rounded shadow-sm">
                         <Form.Group controlId="formName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control type="text" placeholder="Enter your name" />
