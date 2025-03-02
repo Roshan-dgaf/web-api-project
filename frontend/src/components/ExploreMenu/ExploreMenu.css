@@ -1,0 +1,78 @@
+.explore-menu {
+    text-align: center;
+    padding: 4rem 2rem;
+    /* Increased padding for more space */
+    background: #fff8f0;
+    /* Soft background color */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.explore-menu h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #5E1B24;
+    margin-bottom: 1rem;
+}
+
+.explore-menu-text {
+    font-size: 1.3rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    /* Centers and adds spacing */
+    line-height: 1.6;
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.explore-menu-list-item {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.explore-menu-list-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.explore-menu-list-item p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: #333;
+}
+
+.explore-menu-list-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.explore-menu-list-item img.active {
+    border: 3px solid #5E1B24;
+    transform: scale(1.1);
+}
+
+hr {
+    margin-top: 3rem;
+    border: none;
+    height: 2px;
+    background: #5E1B24;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

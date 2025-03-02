@@ -1,9 +1,13 @@
-require("dotenv").config();
+const dotenv = require("dotenv")
 const express = require("express");
-const app = express();
-require("./db/conn");
 const cors = require("cors");
-const port = 5002;
+const ConnectDB = require("./db/conn")
+
+dotenv.config()
+
+//databse config
+ConnectDB()
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -26,6 +30,7 @@ const reviewroutes = require("./routes/reviews/reviewAuthRoutes");
 app.use("/review/api", reviewroutes);
 
 // server starttt
-app.listen(port, () => {
-    console.log(`server start at port no ${port}`)
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+    console.log(`server start at port no :http://localhost:${PORT}`)
 })
