@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from "react-router-dom";
 import Header from './layouts/Header';
 import ContactUs from './pages/ContactUs/contact';
+
 import Dashboard from './pages/Dashboard/Dashboard';
 import Forgotpassword from './pages/ForgotPassword/Forgotpassword';
 import ResetPassword from './pages/ForgotPassword/ResetPassword';
@@ -14,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Dashboard />} />
-        <Route path='/contactus' element={<ContactUs />} />
+        <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/forgotpassword' element={<Forgotpassword />} />

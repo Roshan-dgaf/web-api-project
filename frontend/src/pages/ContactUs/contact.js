@@ -1,97 +1,49 @@
-import React, { useState } from 'react';
+// src/pages/ContactUs/contact.js
+
+import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import './ContactUs.scss';
 
 const ContactUs = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-    });
-
-    const [formErrors, setFormErrors] = useState({});
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const validateForm = () => {
-        const errors = {};
-        if (!formData.name) errors.name = 'Name is required.';
-        if (!formData.email) errors.email = 'Email is required.';
-        else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = 'Email is invalid.';
-        if (!formData.message) errors.message = 'Message is required.';
-        setFormErrors(errors);
-        return Object.keys(errors).length === 0;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validateForm()) {
-            // Handle form submission logic here
-            alert('Form submitted successfully!');
-        }
-    };
-
     return (
-        <Container className="contact-us">
-            <Row className="justify-content-center mt-5">
-                <Col md={8}>
+        <Container className="mt-5">
+            <Row className="justify-content-center">
+                {/* Left Column: Contact Details */}
+                <Col md={5} className="mb-4 mb-md-0">
                     <h1 className="text-center mb-4">Contact Us</h1>
-                    <Form onSubmit={handleSubmit}>
+                    <p className="text-center">We would love to hear from you! Reach out to us via the form on the right or using the contact details below.</p>
+
+                    <div className="contact-details">
+                        <h5>Email</h5>
+                        <p>info@recipeapp.com</p>
+
+                        <h5>Phone</h5>
+                        <p>+1 (123) 456-7890</p>
+
+                        <h5>Address</h5>
+                        <p>123 Recipe St, Food City, FC 56789</p>
+                    </div>
+                </Col>
+
+                {/* Right Column: Contact Form */}
+                <Col md={5}>
+                    <h3 className="text-center mb-4">Send Us a Message</h3>
+                    <Form>
                         <Form.Group controlId="formName">
                             <Form.Label>Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                isInvalid={formErrors.name}
-                            />
-                            <Form.Control.Feedback type="invalid">{formErrors.name}</Form.Control.Feedback>
+                            <Form.Control type="text" placeholder="Enter your name" />
                         </Form.Group>
 
-                        <Form.Group controlId="formEmail">
+                        <Form.Group controlId="formEmail" className="mt-3">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                isInvalid={formErrors.email}
-                            />
-                            <Form.Control.Feedback type="invalid">{formErrors.email}</Form.Control.Feedback>
+                            <Form.Control type="email" placeholder="Enter your email" />
                         </Form.Group>
 
-                        <Form.Group controlId="formSubject">
-                            <Form.Label>Subject</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-
-                        <Form.Group controlId="formMessage">
+                        <Form.Group controlId="formMessage" className="mt-3">
                             <Form.Label>Message</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={5}
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                isInvalid={formErrors.message}
-                            />
-                            <Form.Control.Feedback type="invalid">{formErrors.message}</Form.Control.Feedback>
+                            <Form.Control as="textarea" rows={5} placeholder="Your message" />
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" className="w-100 mt-3">
+                        <Button variant="primary" type="submit" className="mt-3 w-100">
                             Submit
                         </Button>
                     </Form>

@@ -1,34 +1,38 @@
-/* Global Styles */
-.contact-us {
-    background-color: #f8f9fa;
-    padding: 50px 0;
-}
-
-.contact-us h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-}
-
-.contact-us .form-control {
-    border-radius: 10px;
+/* src/pages/ContactUs/contact.scss */
+.contact-details h5 {
     font-size: 1.1rem;
-    padding: 15px;
-}
-
-.contact-us .btn {
-    font-size: 1.2rem;
     font-weight: bold;
-    padding: 12px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    margin-bottom: 5px;
 }
 
-.contact-us .btn:hover {
+.contact-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.contact-details {
+    background-color: #f4f7fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
     background-color: #3498db;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .contact-us h1 {
-        font-size: 2rem;
-    }
+button:hover {
+    background-color: #2980b9;
 }
